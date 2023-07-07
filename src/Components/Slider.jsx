@@ -2,6 +2,8 @@ import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
 import styled from "styled-components";
 import { sliderItems } from "../data";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100%;
@@ -9,6 +11,7 @@ const Container = styled.div`
   display: flex;
   background-color: #eebc7b;
   position: relative;
+  ${mobile({ display: "none" })}
 `;
 const Arrow = styled.div`
   width: 50px;
@@ -71,6 +74,10 @@ const Button = styled.button`
   background-color: transparent;
   cursor: pointer;
 `;
+const CustomLink = styled(Link)`
+  text-decoration: none;
+  color: #ebeae8;
+`;
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -96,7 +103,9 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <Button>SHOP NOW</Button>
+              <CustomLink to="/productlist">
+                <Button>SHOP NOW</Button>
+              </CustomLink>
             </InfoContainer>
           </Slide>
         ))}

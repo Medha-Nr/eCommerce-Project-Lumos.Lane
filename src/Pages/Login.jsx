@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100vw;
@@ -14,6 +15,7 @@ const Wrapper = styled.div`
   width: 40%;
   padding: 20px;
   background-color: #5f5d5de8;
+  ${mobile({ width: "75%" })}
 `;
 const Form = styled.form`
   display: flex;

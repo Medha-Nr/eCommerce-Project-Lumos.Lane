@@ -5,15 +5,18 @@ import { Badge } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Cart } from "./CartContext";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   height: 60px;
   font-family: "Noto Sans", sans-serif;
+  ${mobile({ height: "50px" })}
 `;
 const Wrapper = styled.div`
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
+  ${mobile({ padding: "10px 0px" })}
 `;
 
 const Left = styled.div`
@@ -24,6 +27,7 @@ const Left = styled.div`
 const Language = styled.span`
   font-size: 14px;
   cursor: pointer;
+  ${mobile({ display: "none" })}
 `;
 const SearchContainer = styled.div`
   border: 0.5px solid #5e5e5e;
@@ -36,6 +40,7 @@ const SearchContainer = styled.div`
 const Input = styled.input`
   border: none;
   background-color: #4f4f4f;
+  ${mobile({ width: "40px" })}
 `;
 
 const Center = styled.div`
@@ -50,17 +55,20 @@ const CustomLink = styled(Link)`
 const Logo = styled.div`
   font-weight: bold;
   font-family: "Urbanist", sans-serif;
+  ${mobile({ fontSize: "20px", padding: "10px" })}
 `;
 const Right = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  ${mobile({ flex: 2, justifyContent: "center" })}
 `;
 const MenuItem = styled.div`
   font-size: 14px;
   padding: 10px;
   cursor: pointer;
+  ${mobile({ fontSize: "10px", marginLeft: "6px" })}
 `;
 
 const Navbar = () => {
@@ -72,7 +80,7 @@ const Navbar = () => {
         <Left>
           <Language>ENG</Language>
           <SearchContainer>
-            <Input />
+            <Input placeholder="search" />
             <Search style={{ color: "whitesmoke", fontsize: "16px" }} />
           </SearchContainer>
         </Left>

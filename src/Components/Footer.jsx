@@ -9,10 +9,12 @@ import {
   YouTube,
 } from "@material-ui/icons";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
   height: 60vh;
+  ${mobile({ flexDirection: "column" })}
 `;
 const Left = styled.div`
   flex: 1;
@@ -48,6 +50,7 @@ const SocialIcon = styled.div`
 `;
 const Center = styled.div`
   flex: 1;
+  ${mobile({ display: "none" })}
 `;
 const Title = styled.h2`
   margin-bottom: 30px;

@@ -5,8 +5,11 @@ import Announcement from "../Components/Announcement";
 import { Add, Remove } from "@material-ui/icons";
 import { Cart } from "../Components/CartContext";
 import { Link } from "react-router-dom";
+import { mobile } from "../responsive";
+
 const Container = styled.div``;
 const Wrapper = styled.div`
+  ${mobile({ wrapper: "10px" })}
   padding: 20px;
 `;
 const Title = styled.h1`
@@ -35,6 +38,7 @@ const TopButton = styled.button`
 `;
 const Toptexts = styled.div`
   font-size: 20px;
+  ${mobile({ display: "none" })}
 `;
 const Toptext = styled.span`
   text-decoration: underline;
@@ -44,6 +48,7 @@ const Toptext = styled.span`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: "column" })}
 `;
 const Info = styled.div`
   flex: 3;
@@ -51,6 +56,7 @@ const Info = styled.div`
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ margin: "5px 15px", flexDirection: "column" })}
 `;
 const ProductDetail = styled.div`
   flex: 2;
@@ -123,6 +129,7 @@ const ProductAmount = styled.div`
 const ProductPrice = styled.div`
   font-size: 30px;
   font-weight: 200;
+  ${mobile({ marginBottom: "20px" })}
 `;
 const Hr = styled.hr`
   background-color: #e4cd73;
